@@ -15,7 +15,7 @@ const TabBar: React.FC<TabBarProps> = ({ currentView, onChange }) => {
         className={`flex flex-col items-center gap-1 mb-3 ${currentView === AppView.HOME ? 'text-yellow-500 font-bold' : 'text-gray-400'}`}
       >
         <Home size={24} fill={currentView === AppView.HOME ? "currentColor" : "none"} />
-        <span className="text-xs">Home</span>
+        <span className="text-xs">首页</span>
       </button>
 
       <button 
@@ -23,7 +23,7 @@ const TabBar: React.FC<TabBarProps> = ({ currentView, onChange }) => {
         className={`flex flex-col items-center gap-1 mb-3 ${currentView === AppView.MESSAGES ? 'text-yellow-500 font-bold' : 'text-gray-400'}`}
       >
         <MessageSquare size={24} fill={currentView === AppView.MESSAGES ? "currentColor" : "none"} />
-        <span className="text-xs">Chat</span>
+        <span className="text-xs">消息</span>
       </button>
 
       <div className="relative -top-6">
@@ -33,7 +33,7 @@ const TabBar: React.FC<TabBarProps> = ({ currentView, onChange }) => {
         >
           <Plus size={32} strokeWidth={3} />
         </button>
-        <div className="text-xs text-center font-semibold mt-1 text-gray-600">Sell</div>
+        <div className="text-xs text-center font-semibold mt-1 text-gray-600">卖闲置</div>
       </div>
 
       <button 
@@ -42,7 +42,7 @@ const TabBar: React.FC<TabBarProps> = ({ currentView, onChange }) => {
         <div className="relative">
           <Heart size={24} />
         </div>
-        <span className="text-xs">Likes</span>
+        <span className="text-xs">收藏</span>
       </button>
 
       <button 
@@ -50,7 +50,7 @@ const TabBar: React.FC<TabBarProps> = ({ currentView, onChange }) => {
         className={`flex flex-col items-center gap-1 mb-3 ${currentView === AppView.PROFILE ? 'text-yellow-500 font-bold' : 'text-gray-400'}`}
       >
         <UserIcon size={24} fill={currentView === AppView.PROFILE ? "currentColor" : "none"} />
-        <span className="text-xs">Me</span>
+        <span className="text-xs">我的</span>
       </button>
     </div>
   );

@@ -1,6 +1,6 @@
 {
-  "name": "Copy of Linli Bao - Neighborhood Market",
-  "description": "A community-centric second-hand marketplace inspired by Xianyu, featuring AI-assisted listing creation.",
+  "name": "邻里宝 - 小区二手",
+  "description": "一个专注于社区邻里的二手交易小程序，支持AI辅助发布。",
   "requestFramePermissions": [
     "camera",
     "microphone"

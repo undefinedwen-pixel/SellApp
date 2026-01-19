@@ -16,48 +16,48 @@ const ProfileView: React.FC = () => {
             <div>
                <h2 className="text-xl font-bold">{CURRENT_USER.name}</h2>
                <div className="text-xs bg-black/10 inline-block px-2 py-0.5 rounded-full mt-1">
-                 Credit Score: Excellent
+                 信用分: 极好
                </div>
             </div>
          </div>
          <div className="flex justify-between text-center px-4">
             <div>
               <div className="font-bold text-lg">12</div>
-              <div className="text-xs opacity-70">Sold</div>
+              <div className="text-xs opacity-70">已卖出</div>
             </div>
             <div>
               <div className="font-bold text-lg">4</div>
-              <div className="text-xs opacity-70">Selling</div>
+              <div className="text-xs opacity-70">在卖</div>
             </div>
             <div>
               <div className="font-bold text-lg">48</div>
-              <div className="text-xs opacity-70">Liked</div>
+              <div className="text-xs opacity-70">收藏</div>
             </div>
             <div>
               <div className="font-bold text-lg">5.0</div>
-              <div className="text-xs opacity-70">Rating</div>
+              <div className="text-xs opacity-70">评价</div>
             </div>
          </div>
       </div>
 
       <div className="p-4 space-y-3 -mt-4">
          <div className="bg-white p-4 rounded-xl shadow-sm flex items-center justify-between">
-            <span className="font-medium">My Wallet</span>
+            <span className="font-medium">我的钱包</span>
             <span className="text-gray-400 text-sm">¥ 350.00 ></span>
          </div>
          <div className="bg-white p-4 rounded-xl shadow-sm space-y-4">
             <div className="flex justify-between items-center text-sm text-gray-600 border-b border-gray-50 pb-3">
-              <span>My Posts</span>
+              <span>我的发布</span>
               {/* TODO: Link to My Listings page */}
               <span>></span>
             </div>
             <div className="flex justify-between items-center text-sm text-gray-600 border-b border-gray-50 pb-3">
-              <span>Bought Items</span>
+              <span>我买到的</span>
                {/* TODO: Link to Order History page */}
               <span>></span>
             </div>
             <div className="flex justify-between items-center text-sm text-gray-600">
-              <span>Settings</span>
+              <span>设置</span>
               <span>></span>
             </div>
          </div>

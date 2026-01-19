@@ -10,7 +10,7 @@ const MessagesView: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen pb-24 px-4 pt-12">
-      <h2 className="text-xl font-bold mb-6">Messages</h2>
+      <h2 className="text-xl font-bold mb-6">消息</h2>
       <div className="space-y-4">
         {[1,2,3].map(i => (
           // TODO: Replace with dynamic data mapping
@@ -21,15 +21,15 @@ const MessagesView: React.FC = () => {
              </div>
              <div className="flex-1">
                <div className="flex justify-between items-baseline mb-1">
-                 <span className="font-bold text-sm">Neighbor #{i}</span>
-                 <span className="text-[10px] text-gray-400">10:3{i} AM</span>
+                 <span className="font-bold text-sm">邻居 #{i}</span>
+                 <span className="text-[10px] text-gray-400">10:3{i}</span>
                </div>
-               <p className="text-xs text-gray-500 truncate">Is the item still available? I can pick up now.</p>
+               <p className="text-xs text-gray-500 truncate">宝贝还在吗？我可以现在去拿。</p>
              </div>
              <img src={`https://picsum.photos/seed/item${i}/100/100`} className="w-12 h-12 rounded-md object-cover" alt="item preview" />
           </div>
         ))}
-        <div className="text-center text-gray-400 text-xs py-4">No more messages</div>
+        <div className="text-center text-gray-400 text-xs py-4">没有更多消息了</div>
       </div>
     </div>
   )

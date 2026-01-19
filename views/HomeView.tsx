@@ -34,13 +34,13 @@ const HomeView: React.FC<HomeViewProps> = ({ items, onItemClick }) => {
         <div className="flex items-center gap-2 mb-3">
           <div className="flex items-center gap-1 bg-yellow-500/30 px-2 py-1 rounded-lg">
             <MapPin size={14} className="text-black" />
-            <span className="text-xs font-bold text-black">Sunshine Gardens</span>
+            <span className="text-xs font-bold text-black">阳光花园</span>
           </div>
           <div className="flex-1 bg-white rounded-full flex items-center px-3 py-2">
             <Search size={16} className="text-gray-400 mr-2" />
             <input 
               type="text" 
-              placeholder="Search for 'Baby Stroller'" 
+              placeholder="搜索 '婴儿推车'" 
               className="bg-transparent text-sm w-full outline-none placeholder-gray-400"
               // TODO: Implement search handler
               // onChange={(e) => handleSearch(e.target.value)}
@@ -76,7 +76,7 @@ const HomeView: React.FC<HomeViewProps> = ({ items, onItemClick }) => {
             <div className="relative aspect-square bg-gray-200">
               <img src={item.images[0]} alt={item.title} className="w-full h-full object-cover" />
               {item.isNew && (
-                <span className="absolute top-2 left-2 bg-green-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded">NEW</span>
+                <span className="absolute top-2 left-2 bg-green-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded">全新</span>
               )}
             </div>
             <div className="p-3">
@@ -92,7 +92,7 @@ const HomeView: React.FC<HomeViewProps> = ({ items, onItemClick }) => {
                 <img src={item.seller.avatar} className="w-4 h-4 rounded-full" alt="avatar" />
                 <span className="text-[10px] text-gray-500 truncate">{item.seller.name}</span>
                 {item.seller.rating >= 4.8 && (
-                   <span className="bg-yellow-100 text-yellow-700 text-[9px] px-1 rounded">Reliable</span>
+                   <span className="bg-yellow-100 text-yellow-700 text-[9px] px-1 rounded">靠谱</span>
                 )}
               </div>
             </div>
@@ -102,7 +102,7 @@ const HomeView: React.FC<HomeViewProps> = ({ items, onItemClick }) => {
       
       {filteredItems.length === 0 && (
         <div className="text-center py-20 text-gray-400">
-          <p>No treasures found here...</p>
+          <p>这里暂时还没有宝贝...</p>
         </div>
       )}
     </div>

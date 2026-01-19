@@ -23,7 +23,7 @@ const PublishView: React.FC<PublishViewProps> = ({ onPublish, onCancel }) => {
 
   // AI Generation Handler
   const handleAIGenerate = async () => {
-    if (!title) return alert("Please enter a title first!");
+    if (!title) return alert("请先输入标题!");
     
     setIsGenerating(true);
     try {
@@ -32,14 +32,14 @@ const PublishView: React.FC<PublishViewProps> = ({ onPublish, onCancel }) => {
       if (!price) setPrice(result.suggestedPrice.toString());
       setTags(result.tags);
     } catch (e) {
-      alert("AI is taking a nap. Try again later.");
+      alert("AI 正在休息，请稍后再试。");
     } finally {
       setIsGenerating(false);
     }
   };
 
   const handleSubmit = () => {
-    if (!title || !price || !description) return alert("Please fill in all required fields");
+    if (!title || !price || !description) return alert("请填写所有必填项");
     
     // TODO: Data Interface - Create Listing
     // API: POST /api/items
@@ -66,9 +66,9 @@ const PublishView: React.FC<PublishViewProps> = ({ onPublish, onCancel }) => {
   return (
     <div className="bg-white min-h-screen pb-safe">
       <div className="px-4 py-3 border-b border-gray-100 flex justify-between items-center sticky top-0 bg-white z-20">
-        <button onClick={onCancel} className="text-gray-500 text-sm">Cancel</button>
-        <h2 className="font-bold text-lg">Sell Item</h2>
-        <button onClick={handleSubmit} className="bg-yellow-400 px-4 py-1.5 rounded-full text-sm font-bold">Publish</button>
+        <button onClick={onCancel} className="text-gray-500 text-sm">取消</button>
+        <h2 className="font-bold text-lg">发布闲置</h2>
+        <button onClick={handleSubmit} className="bg-yellow-400 px-4 py-1.5 rounded-full text-sm font-bold">发布</button>
       </div>
 
       <div className="p-4 space-y-6">
@@ -77,7 +77,7 @@ const PublishView: React.FC<PublishViewProps> = ({ onPublish, onCancel }) => {
            {/* TODO: Implement drag and drop or file picker */}
            <div className="w-24 h-24 bg-gray-100 rounded-lg flex flex-col items-center justify-center text-gray-400 border border-dashed border-gray-300 flex-shrink-0">
              <Camera size={24} />
-             <span className="text-xs mt-1">Add Photos</span>
+             <span className="text-xs mt-1">添加照片</span>
            </div>
            {/* Mock uploaded image based on title */}
            {title && (
@@ -94,7 +94,7 @@ const PublishView: React.FC<PublishViewProps> = ({ onPublish, onCancel }) => {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             className="w-full text-lg font-bold placeholder-gray-400 border-none outline-none"
-            placeholder="What are you selling? (e.g. Old Bike)"
+            placeholder="在卖什么？(如: 旧自行车)"
           />
         </div>
 
@@ -104,7 +104,7 @@ const PublishView: React.FC<PublishViewProps> = ({ onPublish, onCancel }) => {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             className="w-full h-32 resize-none text-sm text-gray-700 placeholder-gray-400 border-none outline-none"
-            placeholder="Describe condition, reason for selling, pick-up details..."
+            placeholder="描述宝贝的品牌型号、新旧程度、入手渠道、转手原因..."
           />
           <button 
             onClick={handleAIGenerate}
@@ -114,11 +114,11 @@ const PublishView: React.FC<PublishViewProps> = ({ onPublish, onCancel }) => {
             }`}
           >
             {isGenerating ? (
-              <span>Thinking...</span>
+              <span>思考中...</span>
             ) : (
               <>
                 <Sparkles size={12} />
-                <span>AI Polish</span>
+                <span>AI 润色</span>
               </>
             )}
           </button>
@@ -131,7 +131,7 @@ const PublishView: React.FC<PublishViewProps> = ({ onPublish, onCancel }) => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2 text-gray-600">
                <Tag size={18} />
-               <span className="text-sm font-medium">Price (¥)</span>
+               <span className="text-sm font-medium">价格 (¥)</span>
             </div>
             <input 
               type="number" 
@@ -145,7 +145,7 @@ const PublishView: React.FC<PublishViewProps> = ({ onPublish, onCancel }) => {
           <div className="flex items-center justify-between">
              <div className="flex items-center gap-2 text-gray-600">
                <span className="text-lg">📂</span>
-               <span className="text-sm font-medium">Category</span>
+               <span className="text-sm font-medium">分类</span>
              </div>
              <select 
                value={category}
@@ -161,7 +161,7 @@ const PublishView: React.FC<PublishViewProps> = ({ onPublish, onCancel }) => {
           <div className="flex items-center justify-between">
              <div className="flex items-center gap-2 text-gray-600">
                <MapPin size={18} />
-               <span className="text-sm font-medium">Location</span>
+               <span className="text-sm font-medium">地点</span>
              </div>
              <span className="text-sm text-gray-500">{CURRENT_USER.location}</span>
           </div>

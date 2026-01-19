@@ -12,19 +12,19 @@ export const generateListingDescription = async (
 ): Promise<{ description: string; suggestedPrice: number; tags: string[] }> => {
   try {
     const prompt = `
-      You are an expert copywriter for a community second-hand marketplace app (like Xianyu).
-      Help me sell an item.
+      你是一个社区二手交易平台（类似闲鱼）的专业文案助手。
+      请帮我为以下物品撰写一段吸引人的销售文案。
       
-      Item Title: "${title}"
-      Category: "${category}"
-      Condition: "${condition}"
+      物品名称: "${title}"
+      分类: "${category}"
+      成色: "${condition}"
 
-      Output a JSON object with the following keys:
-      - "description": A catchy, friendly, and honest description (max 80 words) encouraging neighbors to buy. Use emojis.
-      - "suggestedPrice": A numeric estimate (in local currency units, integer only) for a second-hand price. Assume a reasonable base value.
-      - "tags": An array of 3 short relevant tags (e.g. "Urgent", "Like New", "Self-pickup").
+      请输出一个 JSON 对象，包含以下键：
+      - "description": 一段朗朗上口、友好且诚实的中文描述（最多80字），鼓励邻居购买。请适当使用emoji表情。
+      - "suggestedPrice": 二手估价（人民币整数），基于常识给出一个合理的基准价格。
+      - "tags": 一个包含3个简短中文标签的数组（例如 "急出"、"九九新"、"自提"）。
 
-      Do not wrap the JSON in markdown code blocks. Just return the raw JSON string.
+      不要使用 markdown 代码块包裹 JSON。直接返回原始 JSON 字符串。
     `;
 
     const response = await ai.models.generateContent({
@@ -43,9 +43,9 @@ export const generateListingDescription = async (
     console.error("Gemini Error:", error);
     // Fallback if AI fails
     return {
-      description: `I am selling my ${title}. It is in ${condition} condition. Please contact me if interested!`,
+      description: `我在出闲置：${title}。成色${condition}。感兴趣的邻居请联系我！`,
       suggestedPrice: 50,
-      tags: ["SecondHand"]
+      tags: ["二手闲置"]
     };
   }
 };
