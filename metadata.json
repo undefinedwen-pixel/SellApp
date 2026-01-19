@@ -1,0 +1,8 @@
+{
+  "name": "Copy of Linli Bao - Neighborhood Market",
+  "description": "A community-centric second-hand marketplace inspired by Xianyu, featuring AI-assisted listing creation.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
